@@ -1,0 +1,134 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0F172A; /* bg-slate-900 */
+    color: #E2E8F0; /* text-slate-200 */
+    overflow-x: hidden;
+}
+
+.text-accent { color: #BEF264; }
+.bg-accent { background-color: #BEF264; }
+.border-accent { border-color: #BEF264; }
+
+/* Styling untuk Navigasi Sidebar */
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #94A3B8; /* text-slate-400 */
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.nav-link:hover {
+    background-color: #1E293B; /* bg-slate-800 */
+    color: #E2E8F0; /* text-slate-200 */
+}
+.nav-link-active {
+    background-color: #BEF264;
+    color: #0F172A; /* bg-slate-900 */
+    font-weight: 700;
+}
+.nav-link-active:hover {
+    background-color: #BEF264;
+    color: #0F172A;
+}
+.nav-link i {
+    width: 28px; /* Memberi jarak ikon */
+}
+
+/* Styling Progress Bar */
+.progress-bar-container {
+    background-color: #334155; /* bg-slate-700 */
+    border-radius: 9999px;
+    overflow: hidden;
+    height: 20px;
+}
+.progress-bar {
+    background-color: #BEF264; /* bg-accent */
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0F172A;
+    line-height: 20px;
+}
+
+.animate-pulse-fast {
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+/* Styling Tombol Kontrol */
+.control-button {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 1px solid #334155; /* border-slate-700 */
+}
+.control-button:disabled {
+    background-color: #334155; /* bg-slate-700 */
+    color: #64748B; /* text-slate-500 */
+    cursor: not-allowed;
+}
+.control-button.on {
+    background-color: #BEF264;
+    color: #0F172A;
+    border-color: #BEF264;
+}
+.control-button.off {
+    background-color: #1E293B; /* bg-slate-800 */
+    color: #E2E8F0; /* text-slate-200 */
+}
+
+/* Styling Log */
+#log-list {
+    height: 200px;
+    overflow-y: auto;
+    background-color: #020617; /* bg-slate-950 */
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #334155;
+}
+#log-list li {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid #1E293B; /* bg-slate-800 */
+}
+#log-list li:last-child { border-bottom: none; }
+#log-list .log-auto { color: #94A3B8; }
+#log-list .log-manual { color: #EAB308; }
+#log-list .log-danger { color: #F87171; }
+#log-list .log-system { color: #34D399; }
+
+/* Styling untuk Heatmap Tabel */
+.heatmap-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.heatmap-table th {
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    color: #94A3B8;
+}
+.heatmap-table td {
+    height: 40px;
+    border: 2px solid #0F172A; /* bg-slate-900 */
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #1E293B;
+    font-weight: bold;
+}
+.heatmap-low { background-color: #4ADE80; } /* green-400 */
+.heatmap-medium { background-color: #FACC15; } /* yellow-400 */
+.heatmap-high { background-color: #F87171; } /* red-400 */
